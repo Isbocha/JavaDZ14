@@ -3,7 +3,7 @@ package ru.netology.JavaDZ14.games;
 public class Player {
     private int id;
     private String name;
-    private int strength;
+        private int strength;
 
     public Player() {
     }
@@ -13,6 +13,7 @@ public class Player {
         this.name = name;
         this.strength = strength;
     }
+
 
     public void setId(int id) {
         this.id = id;
