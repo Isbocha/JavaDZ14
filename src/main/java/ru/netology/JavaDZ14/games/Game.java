@@ -1,19 +1,22 @@
+
 package ru.netology.JavaDZ14.games;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Game {
-    private ArrayList<Player> players = new ArrayList<>();
+
+    private HashMap<String, Player> map = new HashMap<>();
 
     public Player register(Player player) {
-        players.add(player);
+        map.put(player.getName(), player);
         return player;
     }
 
     public Player findByName(String name) {
-        for (Player player : players) {
-            if (player.getName() == name) {
-                return player;
+        for (String key : map.keySet()) {
+            if (key == name) {
+                return map.get(key);
             }
         }
         return null;
@@ -23,7 +26,9 @@ public class Game {
         Player player1 = findByName(playerName1);
         Player player2 = findByName(playerName2);
 
-        if (player1 == null) {
+
+        if (
+                player1 == null) {
             throw new NotRegisteredException(
                     "Игрок " + player1 + "не зарегистрирован"
             );
@@ -33,6 +38,7 @@ public class Game {
                     "Игрок " + player2 + "не зарегистрирован"
             );
         }
+
         if (player1.getStrength() > player2.getStrength()) {
             return 1;
         } else if (player1.getStrength() < player2.getStrength()) {

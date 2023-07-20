@@ -14,6 +14,7 @@ public class Player {
         this.strength = strength;
     }
 
+
     public void setId(int id) {
         this.id = id;
     }

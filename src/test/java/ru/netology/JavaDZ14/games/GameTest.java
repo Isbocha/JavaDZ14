@@ -6,10 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class GameTest {
     Game games = new Game();
+    private HashMap<String, Integer> map = new HashMap();
     Player player1 = new Player(1, "Петя", 7);
     Player player2 = new Player(2, "Слава", 2);
     Player player3 = new Player(3, "Максим", 5);
@@ -90,4 +92,5 @@ public class GameTest {
             games.round("Roman", "Петя");
         });
     }
+
 }
